@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strands Khelo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <nav id="navbar">
+        <button id="createStrandsy">Create Strandsy</button>
+    </nav>
+
+    <h1>Strands Khelo</h1>
+    <p id="hint">Songs in friend's "..." Spotify playlist + one Enrique classic song</p>
+    
+    <div id="grid">
+        {% for row in grid %}
+            {% for letter in row %}
+                <div class="letter" data-letter="{{ letter }}">{{ letter }}</div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+
+    <p id="messageBox"></p>
+
+    <button id="submitSelection">Submit</button>
+
+    <!-- Hidden GIF Layer -->
+    <div id="congratsMessage">
+        <img src="https://media.tenor.com/bgmyA.gif" alt="Congrats!" />
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
